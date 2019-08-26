@@ -1,15 +1,25 @@
 package com.apress.springrecipes.sequence;
 
+import com.apress.springrecipes.sequence.service.PrefixGenerator;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class SequenceGenerator {
-    private String prefix;
+    private PrefixGenerator prefixGenerator;
+
     private String suffix;
     private int initial;
     private final AtomicInteger counter = new AtomicInteger();
 
-    public void setPrefix(String prefix) {
-        this.prefix = prefix;
+    public SequenceGenerator() {}
+
+    public SequenceGenerator(PrefixGenerator prefixGenerator, String suffix, int initial) {
+        this.prefixGenerator = prefixGenerator;
+        this.suffix = suffix;
+        this.initial = initial;
+    }
+
+    public void setPrefixGenerator(PrefixGenerator prefixGenerator) {
+        this.prefixGenerator = prefixGenerator;
     }
 
     public void setSuffix(String suffix) {
@@ -22,7 +32,7 @@ public class SequenceGenerator {
 
     public String getSequence() {
         StringBuilder builder = new StringBuilder();
-        builder.append(prefix)
+        builder.append(prefixGenerator.getPrefix())
                 .append(initial)
                 .append(counter.getAndIncrement())
                 .append(suffix);
