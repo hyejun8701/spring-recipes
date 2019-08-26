@@ -1,8 +1,8 @@
-package sequence.config;
+package com.apress.springrecipes.sequence.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import sequence.SequenceGenerator;
+import com.apress.springrecipes.sequence.SequenceGenerator;
 
 @Configuration
 public class SequenceGeneratorConfiguration {

@@ -1,6 +1,6 @@
-package repository;
+package com.apress.springrecipes.sequence.repository;
 
-import domain.Sequence;
+import com.apress.springrecipes.sequence.domain.Sequence;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -24,7 +24,7 @@ public class SequenceDaoImpl implements SequenceDao {
 
     @Override
     public int getNextValue(String sequenceId) {
-        AtomicInteger value = new AtomicInteger();
+        AtomicInteger value = values.get(sequenceId);
         return value.getAndIncrement();
     }
 }

@@ -1,6 +1,6 @@
-package repository;
+package com.apress.springrecipes.sequence.repository;
 
-import domain.Sequence;
+import com.apress.springrecipes.sequence.domain.Sequence;
 
 public interface SequenceDao {
     public Sequence getSequence(String sequenceId);

@@ -1,4 +1,4 @@
-package domain;
+package com.apress.springrecipes.sequence.domain;
 
 public class Sequence {
     private final String id;
