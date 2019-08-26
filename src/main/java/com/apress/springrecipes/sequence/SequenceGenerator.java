@@ -1,9 +1,12 @@
 package com.apress.springrecipes.sequence;
 
 import com.apress.springrecipes.sequence.service.PrefixGenerator;
+
+import javax.annotation.Resource;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class SequenceGenerator {
+    @Resource
     private PrefixGenerator prefixGenerator;
 
     private String suffix;
@@ -18,9 +21,9 @@ public class SequenceGenerator {
         this.initial = initial;
     }
 
-    public void setPrefixGenerator(PrefixGenerator prefixGenerator) {
-        this.prefixGenerator = prefixGenerator;
-    }
+//    public void setPrefixGenerator(PrefixGenerator prefixGenerator) {
+//        this.prefixGenerator = prefixGenerator;
+//    }
 
     public void setSuffix(String suffix) {
         this.suffix = suffix;

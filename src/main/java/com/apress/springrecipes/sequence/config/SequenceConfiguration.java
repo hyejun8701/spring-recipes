@@ -19,7 +19,7 @@ public class SequenceConfiguration {
         SequenceGenerator sequence = new SequenceGenerator();
         sequence.setInitial(100000);
         sequence.setSuffix("A");
-        sequence.setPrefixGenerator(datePrefixGenerator());
+        //sequence.setPrefixGenerator(datePrefixGenerator());
         return sequence;
     }
 }
