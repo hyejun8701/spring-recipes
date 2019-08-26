@@ -3,10 +3,12 @@ package com.apress.springrecipes.sequence;
 import com.apress.springrecipes.sequence.service.PrefixGenerator;
 
 import javax.annotation.Resource;
+import javax.inject.Inject;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class SequenceGenerator {
-    @Resource
+    //@Resource
+    @Inject @DatePrefixAnnotation
     private PrefixGenerator prefixGenerator;
 
     private String suffix;

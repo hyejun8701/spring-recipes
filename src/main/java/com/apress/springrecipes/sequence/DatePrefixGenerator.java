@@ -8,8 +8,9 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@Component
-@Primary
+/*@Component
+@Primary*/
+@DatePrefixAnnotation
 public class DatePrefixGenerator implements PrefixGenerator {
     private DateFormat formatter;
 
