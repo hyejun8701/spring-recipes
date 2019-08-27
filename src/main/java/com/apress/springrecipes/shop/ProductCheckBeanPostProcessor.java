@@ -12,8 +12,8 @@ public class ProductCheckBeanPostProcessor implements BeanPostProcessor {
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         if(bean instanceof Product) {
             String productName = ((Product) bean).getName();
-            System.out.println("In AuditCheckBeanPostProcessor.postProcessBeforeInitialization, "
-                    + "processing Product: " + productName);
+//            System.out.println("In AuditCheckBeanPostProcessor.postProcessBeforeInitialization, "
+//                    + "processing Product: " + productName);
         }
         return bean;
     }
@@ -22,8 +22,8 @@ public class ProductCheckBeanPostProcessor implements BeanPostProcessor {
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         if(bean instanceof Product) {
             String productName = ((Product) bean).getName();
-            System.out.println("In AuditCheckBeanPostProcessor.postProcessAfterInitialization, "
-                    + "processing Product: " + productName);
+//            System.out.println("In AuditCheckBeanPostProcessor.postProcessAfterInitialization, "
+//                    + "processing Product: " + productName);
         }
         return bean;
     }

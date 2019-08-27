@@ -1,6 +1,8 @@
 package com.apress.springrecipes.shop;
 
 import com.apress.springrecipes.shop.config.ShopConfiguration;
+import com.apress.springrecipes.shop.config.ShopConfigurationGlobal;
+import com.apress.springrecipes.shop.config.ShopConfigurationSumWin;
 import com.apress.springrecipes.shop.domain.Battery;
 import com.apress.springrecipes.shop.domain.Disc;
 import com.apress.springrecipes.shop.domain.Product;
@@ -12,7 +14,8 @@ import java.util.Locale;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        ApplicationContext context = new AnnotationConfigApplicationContext(ShopConfiguration.class);
+        //ApplicationContext context = new AnnotationConfigApplicationContext(ShopConfiguration.class);
+        //ApplicationContext context = new AnnotationConfigApplicationContext(ShopConfigurationGlobal.class, ShopConfigurationSumWin.class);
 
 //        String alert = context.getMessage("alert.checkout", null, Locale.US);
 //        String alert_inventory = context.getMessage("alert.inventory.checkout", new Object[]{"DVD-RW 3.0", new Date()}, Locale.US);
@@ -48,13 +51,34 @@ public class Main {
 //        System.out.println("And don't forgot our discounts!");
 //        System.out.println(props);
 
-        Battery aaa = context.getBean("discountFactoryBeanAAA", Battery.class);
+//        Battery aaa = context.getBean("discountFactoryBeanAAA", Battery.class);
+//        System.out.println(aaa);
+//
+//        Disc cdrw = context.getBean("discountFactoryBeanCDRW", Disc.class);
+//        System.out.println(cdrw);
+//
+//        Disc dvdrw = context.getBean("discountFactoryBeanDVDRW", Disc.class);
+//        System.out.println(dvdrw);
+
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+        context.getEnvironment().setActiveProfiles("global", "winter");
+        context.scan("com.apress.springrecipes.shop");
+        context.refresh();
+
+        Battery aaa = context.getBean("aaa", Battery.class);
         System.out.println(aaa);
 
-        Disc cdrw = context.getBean("discountFactoryBeanCDRW", Disc.class);
+        Disc cdrw = context.getBean("cdrw", Disc.class);
         System.out.println(cdrw);
 
-        Disc dvdrw = context.getBean("discountFactoryBeanDVDRW", Disc.class);
+        Disc dvdrw = context.getBean("dvdrw", Disc.class);
         System.out.println(dvdrw);
+
+        ShoppingCart cart1 = context.getBean(ShoppingCart.class);
+        cart1.addItem(aaa);
+        cart1.addItem(cdrw);
+
+        Cashier2_8 cashier2_8 = context.getBean("cashier", Cashier2_8.class);
+        cashier2_8.checkout(cart1);
     }
 }
