@@ -68,12 +68,12 @@ public class ShopConfiguration {
         return p2;
     }
 
-    @Bean(initMethod = "openFile", destroyMethod = "closeFile")
-    public Cashier2_8 cashier() {
-        String path = System.getProperty("java.io.tmpdir") + "/cashier";
-        Cashier2_8 c1 = new Cashier2_8();
-        c1.setFileName("checkout");
-        c1.setPath(path);
-        return c1;
-    }
+//    @Bean(initMethod = "openFile", destroyMethod = "closeFile")
+//    public Cashier2_8 cashier() {
+//        String path = System.getProperty("java.io.tmpdir") + "/cashier";
+//        Cashier2_8 c1 = new Cashier2_8();
+//        c1.setFileName("checkout");
+//        c1.setPath(path);
+//        return c1;
+//    }
 }

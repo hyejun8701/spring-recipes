@@ -1,10 +1,20 @@
 package com.apress.springrecipes.shop;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.io.*;
 import java.util.Date;
 
+@Component
 public class Cashier2_8 {
+
+    @Value("checkout")
     private String fileName;
+
+    @Value("c:/Windows/Temp/cashier")
     private String path;
     private BufferedWriter writer;
 
@@ -16,6 +26,7 @@ public class Cashier2_8 {
         this.path = path;
     }
 
+    @PostConstruct
     public void openFile() throws IOException {
         File targetDir = new File(path);
         if(!targetDir.exists()) {
@@ -35,6 +46,7 @@ public class Cashier2_8 {
         writer.flush();
     }
 
+    @PreDestroy
     public void closeFile() throws IOException {
         writer.close();
     }

@@ -33,6 +33,7 @@ public class Main {
 
         Cashier2_8 cashier2_8 = context.getBean(Cashier2_8.class);
         cashier2_8.checkout(cart1);
+
 //
 //        ShoppingCart cart2 = context.getBean(ShoppingCart.class);
 //        cart2.addItem(dvdrw);
