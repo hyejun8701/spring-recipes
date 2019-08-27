@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.Locale;
 
 @Component
-public class Cashier {
+public class Cashier2_7 {
     @Autowired
     private MessageSource messageSource;
 

@@ -2,16 +2,11 @@ package com.apress.springrecipes.shop;
 
 import com.apress.springrecipes.shop.config.ShopConfiguration;
 import com.apress.springrecipes.shop.domain.Product;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.support.PropertiesLoaderUtils;
 
 import java.util.Date;
 import java.util.Locale;
-import java.util.Properties;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -33,8 +28,11 @@ public class Main {
 
         System.out.println("Shopping Cart 1 contains " + cart1.getItems());
 
-        Cashier cashier = context.getBean(Cashier.class);
-        cashier.checkout(cart1);
+        Cashier2_7 cashier2_7 = context.getBean(Cashier2_7.class);
+        cashier2_7.checkout(cart1);
+
+        Cashier2_8 cashier2_8 = context.getBean(Cashier2_8.class);
+        cashier2_8.checkout(cart1);
 //
 //        ShoppingCart cart2 = context.getBean(ShoppingCart.class);
 //        cart2.addItem(dvdrw);
