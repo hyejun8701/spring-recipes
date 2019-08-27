@@ -1,14 +1,15 @@
 package com.apress.springrecipes.sequence;
 
 import com.apress.springrecipes.sequence.service.PrefixGenerator;
+import org.springframework.beans.factory.annotation.Required;
 
 import javax.annotation.Resource;
 import javax.inject.Inject;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class SequenceGenerator {
-    //@Resource
-    @Inject @DatePrefixAnnotation
+    @Resource
+    //@Inject @DatePrefixAnnotation
     private PrefixGenerator prefixGenerator;
 
     private String suffix;
@@ -23,10 +24,12 @@ public class SequenceGenerator {
         this.initial = initial;
     }
 
-//    public void setPrefixGenerator(PrefixGenerator prefixGenerator) {
-//        this.prefixGenerator = prefixGenerator;
-//    }
+    @Required
+    public void setPrefixGenerator(PrefixGenerator prefixGenerator) {
+        this.prefixGenerator = prefixGenerator;
+    }
 
+    @Required
     public void setSuffix(String suffix) {
         this.suffix = suffix;
     }
