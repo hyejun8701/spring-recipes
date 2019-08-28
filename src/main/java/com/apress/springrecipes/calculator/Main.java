@@ -23,6 +23,7 @@ public class Main {
         MinCalculator minCalculator = (MinCalculator) arithmeticCalculator;
         minCalculator.min(1, 2);
 
+
         UnitCalculator unitCalculator = context.getBean("unitCalculator", UnitCalculator.class);
         unitCalculator.kilogramToPound(10);
         unitCalculator.kilometerToMile(5);
