@@ -7,6 +7,6 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class CalculatorPointcuts {
     //@Pointcut("execution(* *.*(..))")
-    @Pointcut("annotation(com.apress.springrecipes.calculator.annotation.LoggingRequired)")
+    @Pointcut("@target(com.apress.springrecipes.calculator.annotation.LoggingRequired)")
     public void loggingOperation() {}
 }
