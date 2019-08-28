@@ -78,7 +78,10 @@ public class Main {
         cart1.addItem(aaa);
         cart1.addItem(cdrw);
 
-        Cashier2_8 cashier2_8 = context.getBean("cashier", Cashier2_8.class);
-        cashier2_8.checkout(cart1);
+//        Cashier2_8 cashier2_8 = context.getBean("cashier", Cashier2_8.class);
+//        cashier2_8.checkout(cart1);
+
+        Cashier2_12 cashier2_12 = context.getBean("cashier", Cashier2_12.class);
+        cashier2_12.checkout(cart1);
     }
 }
