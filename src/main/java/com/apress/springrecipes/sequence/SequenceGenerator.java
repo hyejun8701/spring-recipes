@@ -4,12 +4,12 @@ import com.apress.springrecipes.sequence.service.PrefixGenerator;
 import org.springframework.beans.factory.annotation.Required;
 
 import javax.annotation.Resource;
-//import javax.inject.Inject;
+import javax.inject.Inject;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class SequenceGenerator {
     @Resource
-    //@Inject @DatePrefixAnnotation
+    @Inject @DatePrefixAnnotation
     private PrefixGenerator prefixGenerator;
 
     private String suffix;
