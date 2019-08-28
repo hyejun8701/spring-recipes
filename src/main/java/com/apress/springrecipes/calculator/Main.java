@@ -1,12 +1,16 @@
 package com.apress.springrecipes.calculator;
 
-import com.apress.springrecipes.calculator.config.CalculatorConfiguration;
+//import com.apress.springrecipes.calculator.config.CalculatorConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
 
 public class Main {
     public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext(CalculatorConfiguration.class);
+        //ApplicationContext context = new AnnotationConfigApplicationContext(CalculatorConfiguration.class);
+
+        ApplicationContext context =
+                new GenericXmlApplicationContext("appContext.xml");
 
         ArithmeticCalculator arithmeticCalculator = context.getBean("arithmeticCalculator", ArithmeticCalculator.class);
         arithmeticCalculator.add(1,2);

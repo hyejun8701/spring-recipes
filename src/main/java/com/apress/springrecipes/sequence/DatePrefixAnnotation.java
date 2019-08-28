@@ -1,10 +1,10 @@
 package com.apress.springrecipes.sequence;
 
-import javax.inject.Qualifier;
+//import javax.inject.Qualifier;
 
 import java.lang.annotation.*;
 
-@Qualifier
+//@Qualifier
 @Target({ElementType.TYPE, ElementType.FIELD, ElementType.PARAMETER})
 @Documented
 @Retention(RetentionPolicy.RUNTIME)

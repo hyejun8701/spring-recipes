@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-@Order(0)
 public class CalculatorValidationAspect {
 
     @Before("execution(* *.*(double, double))")

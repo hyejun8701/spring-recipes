@@ -12,12 +12,10 @@ import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.criteria.Join;
 import java.util.Arrays;
 
 @Aspect
 @Component
-@Order(1)
 public class CalculatorLoggingAspect {
     private Logger log = LoggerFactory.getLogger(this.getClass());
 

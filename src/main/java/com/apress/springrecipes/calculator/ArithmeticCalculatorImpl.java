@@ -1,8 +1,10 @@
 package com.apress.springrecipes.calculator;
 
+import com.apress.springrecipes.calculator.annotation.LoggingRequired;
 import org.springframework.stereotype.Component;
 
 @Component("arithmeticCalculator")
+@LoggingRequired
 public class ArithmeticCalculatorImpl implements ArithmeticCalculator {
     @Override
     public double add(double a, double b) {
