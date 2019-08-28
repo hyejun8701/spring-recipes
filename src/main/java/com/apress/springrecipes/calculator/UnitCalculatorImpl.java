@@ -13,9 +13,9 @@ public class UnitCalculatorImpl implements UnitCalculator {
 
     @Override
     public double kilometerToMile(double kilometer) {
-        if(kilometer == 5.0) {
-            throw new IllegalArgumentException();
-        }
+//        if(kilometer == 5.0) {
+//            throw new IllegalArgumentException();
+//        }
 
         double mile = kilometer * 0.62;
         System.out.println(kilometer + " kilometer = " + mile + " mile");
