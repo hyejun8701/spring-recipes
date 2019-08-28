@@ -9,6 +9,7 @@ import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.criteria.Join;
@@ -16,7 +17,8 @@ import java.util.Arrays;
 
 @Aspect
 @Component
-public class CalculatorLoggingAspect implements Ordered {
+@Order(1)
+public class CalculatorLoggingAspect {
     private Logger log = LoggerFactory.getLogger(this.getClass());
 
 //    @Before("execution(* *.*(..))")
@@ -63,10 +65,5 @@ public class CalculatorLoggingAspect implements Ordered {
         log.info("Arguments : {}", Arrays.toString(joinPoint.getArgs()));
         log.info("Target class : {}", joinPoint.getTarget().getClass().getName());
         log.info("This class : {}", joinPoint.getThis().getClass().getName());
-    }
-
-    @Override
-    public int getOrder() {
-        return 1;
     }
 }

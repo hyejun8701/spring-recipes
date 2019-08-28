@@ -4,11 +4,13 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-public class CalculatorValidationAspect implements Ordered {
+@Order(0)
+public class CalculatorValidationAspect {
 
     @Before("execution(* *.*(double, double))")
     public void validateBefore(JoinPoint joinPoint) {
@@ -21,10 +23,5 @@ public class CalculatorValidationAspect implements Ordered {
         if(a < 0) {
             throw new IllegalArgumentException("Positive numbers only");
         }
-    }
-
-    @Override
-    public int getOrder() {
-        return 0;
     }
 }
