@@ -17,6 +17,12 @@ public class Main {
         arithmeticCalculator.div(4,2);
 //        arithmeticCalculator.div(-1,2);
 
+        MaxCalculator maxCalculator = (MaxCalculator) arithmeticCalculator;
+        maxCalculator.max(1, 2);
+
+        MinCalculator minCalculator = (MinCalculator) arithmeticCalculator;
+        minCalculator.min(1, 2);
+
         UnitCalculator unitCalculator = context.getBean("unitCalculator", UnitCalculator.class);
         unitCalculator.kilogramToPound(10);
         unitCalculator.kilometerToMile(5);
