@@ -21,32 +21,32 @@ import java.util.Arrays;
 public class CalculatorLoggingAspect {
     private Logger log = LoggerFactory.getLogger(this.getClass());
 
-    @Pointcut("execution(* *.*(..))")
-    private void loggingOperation() {}
+//    @Pointcut("execution(* *.*(..))")
+//    private void loggingOperation() {}
 
-    @Before("loggingOperation()")
+    @Before("CalculatorPointcuts.loggingOperation()")
     public void logBefore(JoinPoint joinPoint) {
         log.info("The method " + joinPoint.getSignature().getName()
         + "() begins with " + Arrays.toString(joinPoint.getArgs()));
     }
 
-    @After("loggingOperation()")
+    @After("CalculatorPointcuts.loggingOperation()")
     public void logAfter(JoinPoint joinPoint) {
         log.info("The method " + joinPoint.getSignature().getName()
         + "() ends");
     }
 
-    @AfterReturning(pointcut = "loggingOperation()", returning = "result")
+    @AfterReturning(pointcut = "CalculatorPointcuts.loggingOperation()", returning = "result")
     public void logAfterReturning(JoinPoint joinPoint, Object result) {
         log.info("The method {}() ends with {}", joinPoint.getSignature().getName(), result);
     }
 
-    @AfterThrowing(pointcut = "loggingOperation()", throwing = "e")
+    @AfterThrowing(pointcut = "CalculatorPointcuts.loggingOperation()", throwing = "e")
     public void logAfterThrowing(JoinPoint joinPoint, IllegalArgumentException e) {
         log.error("Illegal argument {} in {}()", Arrays.toString(joinPoint.getArgs()), joinPoint.getSignature().getName());
     }
 
-    @Around("loggingOperation()")
+    @Around("CalculatorPointcuts.loggingOperation()")
     public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
         log.info("The method {}() begins with {}", joinPoint.getSignature().getName(), Arrays.toString(joinPoint.getArgs()));
 
