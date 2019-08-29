@@ -27,5 +27,11 @@ public class Main {
         UnitCalculator unitCalculator = context.getBean("unitCalculator", UnitCalculator.class);
         unitCalculator.kilogramToPound(10);
         unitCalculator.kilometerToMile(5);
+
+        Counter arithmeticCounter = (Counter) arithmeticCalculator;
+        System.out.println(arithmeticCounter.getCount());
+
+        Counter unitCalculatorCounter = (Counter) unitCalculator;
+        System.out.println(unitCalculatorCounter.getCount());
     }
 }
