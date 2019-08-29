@@ -35,6 +35,9 @@ dependencies {
     compile "org.aspectj:aspectjweaver:1.8.13"
     compile "org.slf4j:slf4j-simple:1.7.25"
 
+    compileOnly 'org.projectlombok:lombok:1.18.8'
+    annotationProcessor 'org.projectlombok:lombok:1.18.8'
+
     compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.7'
     compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.7'
 }
