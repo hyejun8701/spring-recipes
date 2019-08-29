@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="springrecipes:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/springrecipes_jar</output-path>
+    <root id="archive" name="springrecipes.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="library" level="project" name="Gradle: org.springframework:spring-aop:5.0.5.RELEASE" />
+    </root>
+  </artifact>
+</component>
