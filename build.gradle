@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'war'
 }
 
 group 'springrecipes'
@@ -30,13 +31,17 @@ dependencies {
     compile "org.springframework:spring-core:${springVersion}"
     compile "org.springframework:spring-context:${springVersion}"
     compile "org.springframework:spring-beans:${springVersion}"
-    compile "javax:javaee-api:8.0"
+    //compile "javax:javaee-api:8.0"
     compile "org.aspectj:aspectjrt:1.8.13"
     compile "org.aspectj:aspectjweaver:1.8.13"
     compile "org.slf4j:slf4j-simple:1.7.25"
 
     compileOnly 'org.projectlombok:lombok:1.18.8'
     annotationProcessor 'org.projectlombok:lombok:1.18.8'
+
+    compile "org.springframework:spring-webmvc:${springVersion}"
+    compile "javax.servlet:javax.servlet-api:4.0.0"
+    compile "javax.servlet:jstl:1.2"
 
     compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.7'
     compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.7'
